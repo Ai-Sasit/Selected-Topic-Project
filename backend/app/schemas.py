@@ -1,6 +1,10 @@
 from pydantic import BaseModel
+from typing import Any
 
-class User(BaseModel):
-    name: str
-    email: str
-    password: str
+class Image(BaseModel):
+    owner: str
+    title: str
+    desc: str
+    time: str
+    secret: str
+    image: str

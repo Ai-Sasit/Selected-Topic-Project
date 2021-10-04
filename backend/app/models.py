@@ -1,12 +1,15 @@
 from sqlalchemy import Table, Column
-from sqlalchemy.sql.sqltypes import Integer, String
+from sqlalchemy.sql.sqltypes import Integer, String , BLOB
 from db_config import meta ,engine
 
-users = Table('users', meta,
-    Column('id', Integer ,primary_key=True),
-    Column('name', String(255)),
-    Column('email', String(255)),
-    Column('password', String(255)),
+images = Table('images', meta,
+    Column('id', Integer, unique=True, primary_key=True),
+    Column('owner',String(255), nullable=False),
+    Column('title', String(255), nullable=False),
+    Column('desc', String(255)),
+    Column('time', String(255)),
+    Column('secret', String(255), nullable=False), # image password for edit and remove
+    Column('image', String)
 )
 
 meta.create_all(engine)

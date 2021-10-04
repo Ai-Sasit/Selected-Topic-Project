@@ -1,12 +1,15 @@
 version: '3.8'
 services:
-
-  adminer:
-    image: adminer
-    container_name: STP-adminer
-    restart: always
+  nginx:
+    image: nginx:1.21.3
+    container_name: STP-nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - 8080:8080
+      - 8000:80
+    depends_on:
+      - backend
+      - frontend
   
   backend:
     container_name: STP-Backend-server

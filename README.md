@@ -20,11 +20,11 @@ docker-compose up --build
 ```
 docker-compose down
 ```
-## INDEX PAGE
+## Index Page
 ```
 http://localhost:8000
 ```
-## API URL
+## API URL - Swagger UI
 ```
 http://localhost:8000/api/docs
 ```

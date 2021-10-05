@@ -1,5 +1,5 @@
 # Selected-Topic-Project
-## Project Descrption
+## Project Description
   - Project name: Image Saving Website.
   - A sample website for back-up image.
   - ReactJS + SQLite + FastAPI

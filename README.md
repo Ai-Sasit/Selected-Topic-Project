@@ -28,3 +28,4 @@ http://localhost:8000
 ```
 http://localhost:8000/api/docs
 ```
+### IF Frontend Error | change line break of `run.sh` from `CRLF` to `LF`

@@ -39,6 +39,7 @@ export const updateimage = (id, payload) => {
           type: ACTIONS.UPDATE_IMAGE,
           payload: response.data
       })
+      window.location.replace("/");
   }
 }
 

@@ -5,7 +5,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import DeleteForever from '@mui/icons-material/DeleteForever';
 import Edit from '@mui/icons-material/Edit';
-import { Link } from 'react-router-dom';
 
 function ShowImage(props) {
 
@@ -32,6 +31,15 @@ function ShowImage(props) {
         }
     }
 
+    const handleEdit = () =>{
+        let secret = prompt("Please enter your Image Secret to edit");
+        if (secret === img.secret){
+            props.history.push(`/edit-img/${img.id}`);
+        }else if (secret !== img.secret && secret !== null){
+            alert("Wrong Secret Password! Please try again");
+        }
+    }
+
     return img?<div className="BoxShow">{/* eslint-disable-next-line*/}
         <img src={`${img.image}`} className="showimg"/>
         <div className="backdown">
@@ -49,15 +57,14 @@ function ShowImage(props) {
                     size="large">
                     Delete
                 </Button>
-                <Link to={`/edit-img/${img.id}`} className="link-head">
                 <Button 
                     variant="contained" 
-                    color='success' 
+                    color='success'
+                    onClick={handleEdit}
                     startIcon={<Edit/>} 
                     size="large">
                     Edit
                 </Button>
-                </Link>
             </Stack>
         </div>
     </div>:(<div></div>)
